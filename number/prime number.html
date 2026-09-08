@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>PRIME NUMBER</title>
+    <style>
+        body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h2{
+    color:#333;
+    margin-bottom:20px;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    font-size:16px;
+    border:2px solid #ccc;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#007bff;
+}
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+#result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:#333;
+}
+
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h2>PRIME NUMBER CHECKER</h2>
+    <input type="number" id="num" placeholder="enter a number">
+    <button onclick="checkprimenumber()">check prime number</button>
+    <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function checkprimenumber(){
+            let num = Number(document.getElementById("num").value);
+            let isprime=true;
+            if(num<2){
+                document.getElementById("result").innerHTML=num+" is not prime number";
+                document.getElementById("result").style.color="red";
+                return;
+            }
+            for(let i=2;i<num;i++){
+                if(num%i==0){
+                    isprime=false;
+                    break;
+                }
+            }
+            if(isprime){
+                document.getElementById("result").innerHTML=num+" is a primenumber";
+                document.getElementById("result").style.color="green";
+            }else{
+                document.getElementById("result").innerHTML=num+" is a not primenumber";
+                document.getElementById("result").style.color="red";
+            }
+            }
+    </script>
+</body>
+</html>

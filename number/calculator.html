@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style> body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px 5px;
+            border: none;
+            border-radius: 8px;
+            color:black;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background-color: aqua;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: #222;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        </style>
+    <div class="calculator">
+        <h1>simple calculator</h1>
+    <input type="number" id="num1" placeholder="Enter the first number">
+    <input type="number" id="num2" placeholder="Enter the second number">
+    <button onclick="add()">addition</button>
+    <button onclick="sub()">subraction</button>
+    <button onclick="multi()">multiplication</button>
+    <button onclick="div()">division</button>
+    <h3 id="result"></h3>
+    </div>
+    <script>
+        function add(){
+        let num1=Number(document.getElementById("num1").value);
+        let num2=Number(document.getElementById("num2").value);
+        let result =num1+num2;
+        // document.getElementById("result").style.background="green";
+        document.getElementById("result").innerHTML="addition="+result;
+        }
+        function sub(){
+            let num1=Number(document.getElementById("num1").value);
+        let num2=Number(document.getElementById("num2").value);
+        let result =num1-num2;
+        // document.getElementById("result").style.background="pink";
+        document.getElementById("result").innerHTML="subraction="+result;
+        }
+        function multi(){
+            let num1=Number(document.getElementById("num1").value);
+        let num2=Number(document.getElementById("num2").value);
+        let result =num1*num2;
+        // document.getElementById("result").style.background="blue";
+        document.getElementById("result").innerHTML="multiplication="+result;
+        }
+        function div(){
+            let num1=Number(document.getElementById("num1").value);
+        let num2=Number(document.getElementById("num2").value);
+           if (num2 === 0) {
+        document.getElementById("result").innerHTML = "Cannot divide by zero";
+    } else {
+        let result = num1 / num2;
+        // document.getElementById("result").style.background="purple";
+        document.getElementById("result").innerHTML = "Division = " + result;
+    }
+}
+    </script>
+</body>
+</html>
+        

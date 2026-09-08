@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>FIBOBACCI SERIES</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <h2>fibonacci series</h2>
+        <input type="number" id="num" placeholder="enternumber">
+        <button onclick="fibonacci()">FIBONACCI SERIES</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function fibonacci(){
+            let n = Number(document.getElementById("num").value);
+            let frist =0;
+            let second =1;
+            let output = "";
+            for(let i=1;i<=n;i++)
+            {
+                output+=frist+" ";
+                let next=frist+second;
+                frist=second;
+                second=next;
+            
+            } 
+            document.getElementById("result").innerHTML=output;
+        }
+    </script>
+    
+</body>
+</html>

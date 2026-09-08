@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>EVEN NUMBER</title>
+    <style>
+        .container{
+            width: 80px;
+            padding: 10px;
+            margin: 5px;
+            background-color: lightblue;
+            border: 1px solid blue;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <BUtton onclick="showevennumber()">show even number</BUtton>
+    <div id="container"></div>
+    <script>
+        function showevennumber(){
+            let container = document.getElementById("container");
+            container.innerHTML="";
+            for(let i=1;i<=50;i++){
+                if(i%2==0){
+                    let div=document.createElement("div");
+                    div.className="container";
+                    div.textContent=i;
+                    container.appendChild(div);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
