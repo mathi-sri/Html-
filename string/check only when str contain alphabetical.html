@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>CHECK THE Alphabets</title>
+    <style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    color:#333;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    font-size:16px;
+    border:2px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:95%;
+    padding:10px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+#result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>check alphabets</h2>
+        <input type="text" id="text" placeholder="enter a string">
+        <button onclick="checkalphabets()">check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkalphabets(){
+            let str=document.getElementById("text").value;
+            let isAlphabets=true;
+            for(let i=0;i<str.length;i++)
+            {
+                let ch=str.charAt(i)
+                 if(!((ch>='A'&&ch<='Z')||(ch>='a'&&ch<='z')))
+            {
+                isAlphabets=false;
+                break;
+            }
+            }
+            if(isAlphabets)
+            {
+                document.getElementById("result").innerHTML="only contain alphabets";
+            }
+            else
+            {
+              document.getElementById("result").innerHTML="not contain alphabets";  
+            }
+        }
+    </script>
+</body>
+</html>

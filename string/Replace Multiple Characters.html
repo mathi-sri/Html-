@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Replace Multiple Characters</title>
+    <style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px gray;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    font-size:16px;
+}
+
+button{
+    width:95%;
+    padding:10px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+#result{
+    margin-top:20px;
+    font-size:22px;
+    color:green;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Replace Multiple Characters</h2>
+        <input type="text" id="text" placeholder="enter a sentence">
+        <button onclick="replace()">replace</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function replace(){
+            let str = document.getElementById("text").value;
+                str = str.replaceAll("a","@");
+                str = str.replaceAll("e","3");
+                str = str.replaceAll("i","1");
+                str = str.replaceAll("o","0");
+                str = str.replaceAll("t","7");
+                document.getElementById("result").innerHTML=str;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Count Number of Alphabets and Digits</title>
+    <style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    color:#333;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px;
+    font-size:16px;
+}
+
+button{
+    width:95%;
+    padding:10px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+#result{
+    margin-top:20px;
+    font-size:20px;
+    color:green;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>count number</h2>
+        <input type="text" id="text" placeholder="enter a string">
+        <button onclick="countnumber()">count</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function countnumber(){
+            let str=document.getElementById("text").value;
+            let alphabets=0;
+            let digits=0;
+            for(let i=0;i<str.length;i++)
+        {
+            let ch=str.charAt(i);
+            if((ch>='A'&& ch<='Z')||(ch>='a'&& ch<='z'))
+        {
+            alphabets++;
+        }
+        else if(ch>='0'&&ch<='9'){
+            digits++;
+        }
+        }
+        document.getElementById("result").innerHTML="Alphabets = " + alphabets +" digits = " + digits
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>VOWELS COUNT</title>
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+            text-align:center;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:15px 0;
+            font-size:16px;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:blue;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            font-size:16px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:22px;
+            font-weight:bold;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>COUNT THE VOWELS</h2>
+        <input type="text" id="text" placeholder="enter a sentence">
+        <button onclick="countvowels()">COUNT THE VOWLES</button>
+        <P id="result"></P>
+    </div>
+    <script>
+        function countvowels(){
+            let str=document.getElementById("text").value;
+            let vowels="aeiouAEIOU";
+            let count=0;
+            for(let i=0;i<str.length;i++){
+            if(vowels.includes(str[i]))
+            {
+                count++;
+            }
+            
+        }
+        document.getElementById("result").innerHTML="number of vowels = "+ count;
+    }
+    </script>
+</body>
+</html>

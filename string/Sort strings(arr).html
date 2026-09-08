@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Strings</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:400px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+            color:green;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Sort Strings Alphabetically</h2>
+
+    <input type="text" id="text"
+    placeholder="Enter names separated by commas">
+
+    <button onclick="sortStrings()">Sort</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+function sortStrings(){
+
+    let str = document.getElementById("text").value;
+
+    let arr = str.split(",");
+
+    arr.sort(function(a,b){
+
+        return a.trim().toLowerCase().localeCompare(b.trim().toLowerCase());
+
+    });
+
+    document.getElementById("result").innerHTML =
+    arr.join(", ");
+
+}
+
+</script>
+
+</body>
+</html>

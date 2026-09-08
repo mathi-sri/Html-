@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Truncate String</title>
+     <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:400px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            font-size:16px;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+            color:green;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Truncate String</h2>
+        <input type="text" id="text" placeholder="enter a sentence">
+        <input type="number" id="length" placeholder="enter length">
+        <button onclick="TruncateString()">Truncate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function TruncateString(){
+            let str = document.getElementById("text").value;
+            let len=Number(document.getElementById("length").value);
+            if(str.length>len){
+                str = str.substring(0,len)+"...";
+            }
+            document.getElementById("result").innerHTML=str;
+        }
+    </script>
+</body>
+</html>

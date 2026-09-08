@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Reverse Each Word</title>
+    <style>
+    body{
+    font-family:Arial;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.box{
+    background:white;
+    padding:20px;
+    width:350px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+input,button{
+    padding:10px;
+    width:90%;
+    margin:10px;
+}
+button{
+    background:blue;
+    color:white;
+    border:none;
+}
+#result{
+    color:green;
+    font-size:20px;
+}
+</style>
+</head>
+<body>
+    <div class="box">
+        <h2>Reverse word</h2>
+        <input type="text" id="text" placeholder="enter a name">
+        <button onclick="reverseword()">REVERSE WORD</button>
+        <h3 id="result"></h3>
+    </div>
+    <script>
+        function reverseword(){
+         let sentence=document.getElementById("text").value;
+         let words=sentence.split(" ");
+         let result="";
+         for(let i=0;i<words.length;i++ ){
+            let rev=words[i].split("").reverse("").join("");
+            result+=rev+" ";
+         }
+         document.getElementById("result").innerHTML=result.trim();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Check Two Strings Are Same After Reverse</title>
+     <style>
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Check Two Strings Are Same After Reverse</h2>
+        <input type="text" id="text1" placeholder="enter a sentence">
+        <input type="text" id="text2" placeholder="enter a sentence">
+        <button onclick="checkstring()">check</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkstring(){
+            let str1 = document.getElementById("text1").value;
+            let str2 = document.getElementById("text2").value;
+            let rev=str2.split("").reverse().join("");
+            if(str1==rev)
+        {
+            document.getElementById("result").innerHTML="both strings are same"
+        }
+        else{
+           document.getElementById("result").innerHTML="both strings are not same" 
+        }
+        }
+    </script>
+</body>
+</html>
