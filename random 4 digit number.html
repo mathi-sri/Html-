@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random 4 Digit Number</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        button{
+            width:90%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:28px;
+            font-weight:bold;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Random 4 Digit Number</h2>
+
+    <button onclick="generateNumber()">Generate</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+function generateNumber(){
+
+    let random = Math.floor(Math.random() * 9000) + 1000;
+
+    document.getElementById("result").innerHTML =
+    "Random Number = " + random;
+
+}
+
+</script>
+
+</body>
+</html>

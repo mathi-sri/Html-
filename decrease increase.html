@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>INCREASE/DECREASE</title>
+    <style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:350px;
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#007bff;
+    color:white;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>INCREASE/DECREASE VALUE</h2>
+        <input type="number" id="num" placeholder="enter a number">
+        <button onclick="increase()">+</button>
+        <button onclick="decrease()">-</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function increase(){
+            let num = Number(document.getElementById("num").value);
+            num++;
+            document.getElementById("num").value=num;
+            // document.getElementById("result").innerHTML=num;
+        }
+        function decrease(){
+            let num = Number(document.getElementById("num").value);
+            num--;
+            document.getElementById("num").value=num;
+            // document.getElementById("result").innerHTML=num;
+        }
+    </script>
+    
+</body>
+</html>
