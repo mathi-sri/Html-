@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Management</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin:20px;
+        }
+
+        input,button{
+            padding:8px;
+            margin:5px;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+            margin-top:20px;
+        }
+
+        table,th,td{
+            border:1px solid black;
+        }
+
+        th,td{
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product List</h2>
+    <input type="text" id="search" placeholder="Search Product">
+    <button onclick="sortName()">Sort Name</button>
+    <button onclick="sortPrice()">Sort Price</button>
+    <button onclick="filterPrice()">Filter Price > 1000</button>
+    <button onclick="insertProduct()">Insert Product</button>
+    <table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+    </tbody>
+    </table>
+    <script>
+            let products=[
+{id:1,name:"Laptop",price:50000,quantity:5},
+{id:2,name:"Camera",price:25000,quantity:10},
+{id:3,name:"Cable",price:300,quantity:100},
+{id:4,name:"Charger",price:800,quantity:60},
+{id:5,name:"Mouse",price:500,quantity:80},
+{id:6,name:"Keyboard",price:1200,quantity:40},
+{id:7,name:"Monitor",price:9000,quantity:15},
+{id:8,name:"CPU",price:35000,quantity:8},
+{id:9,name:"Printer",price:7000,quantity:12},
+{id:10,name:"Speaker",price:2500,quantity:30},
+{id:11,name:"SSD",price:4500,quantity:25},
+{id:12,name:"RAM",price:3000,quantity:35},
+{id:13,name:"Pendrive",price:700,quantity:90},
+{id:14,name:"Router",price:1800,quantity:20},
+{id:15,name:"Projector",price:28000,quantity:6},
+{id:16,name:"Power Bank",price:1500,quantity:18},
+{id:17,name:"Smart Watch",price:6000,quantity:22},
+{id:18,name:"Mobile",price:20000,quantity:14},
+{id:19,name:"Cover",price:200,quantity:120},
+{id:20,name:"Case",price:400,quantity:50}
+];
+    function display(data){
+        let rows="";
+        data.forEach(function(product){
+
+    rows+=`
+    <tr>
+        <td>${product.id}</td>
+        <td>${product.name}</td>
+        <td>${product.price}</td>
+        <td>${product.quantity}</td>
+         <td>   
+        <button onclick="editProduct(${product.id})">Edit</button>
+        <button onclick="deleteProduct(${product.id})">Delete</button>
+        </td>
+    
+
+        </tr>
+        `;
+
+         });
+
+        document.getElementById("result").innerHTML=rows;
+
+        }
+
+    display(products);
+        document.getElementById("search").addEventListener("keyup",function(){
+        let value=this.value.toLowerCase();
+        let searchResult=products.filter(function(product){
+        return product.name.toLowerCase().startsWith(value);
+    });
+    display(searchResult);});
+
+    function sortName(){
+            products.sort(function(a,b){
+            return a.name.localeCompare(b.name);
+        });
+        display(products);
+    }
+
+    function sortPrice(){
+        products.sort(function(a,b){
+            return a.price-b.price;
+        });
+        display(products);
+    }
+    function deleteProduct(id){
+
+    products = products.filter(function(product){
+
+        return product.id !== id;
+
+    });
+
+    display(products);
+
+}
+function editProduct(id){
+
+    let product = products.find(function(p){
+
+        return p.id === id;
+
+    });
+
+    let newName = prompt("Enter Product Name", product.name);
+
+    let newPrice = prompt("Enter Product Price", product.price);
+
+    let newQuantity = prompt("Enter Quantity", product.quantity);
+
+    if(newName !== null){
+
+        product.name = newName;
+
+        product.price = Number(newPrice);
+
+        product.quantity = Number(newQuantity);
+
+    }
+
+    display(products);
+
+}
+
+
+    function filterPrice(){
+        let result=products.filter(function(product){
+            return product.price>1000;
+        });
+        display(result);
+    }
+    
+    function insertProduct(){
+        products.push({
+            id:21,name:"Cooler",price:1500,quantity:20
+        });
+        display(products);
+    }
+    </script>
+
+</body>
+</html>
