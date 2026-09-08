@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>SHOW DATE After 10 DAYS</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            font-size:16px;
+            margin:15px 0;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:18px;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <input type="date" id="date" onchange="showdate()">
+        <p id="result"></p>
+    </div>
+    <script>
+        let today = new Date();
+        let minDate=today.toISOString().split("T")[0];
+        let max=new Date(today);
+        max.setDate(today.getDate()+10);
+        let maxDate=max.toISOString().split("T")[0];
+        document.getElementById("date").min=minDate;
+        document.getElementById("date").max=maxDate;
+        function showdate(){
+            let selected = document.getElementById("date").value;
+            document.getElementById("result").innerHTML="selected date = "+ selected;
+        }
+    </script>
+</body>
+</html>
