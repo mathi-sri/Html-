@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>Date After 15 Days</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:380px;
+            background:white;
+            padding:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        button{
+            width:90%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            color:green;
+            font-size:20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Date After 15 Days</h2>
+
+    <button onclick="showDate()">Show Date</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+function showDate(){
+
+    let today = new Date();
+
+    today.setDate(today.getDate()+15);
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+
+    if(day < 10){
+        day = "0" + day;
+    }
+
+    if(month < 10){
+        month = "0" + month;
+    }
+
+    document.getElementById("result").innerHTML =
+    "date after 15 days " + day + "-" + month + "-" + year;
+}
+
+
+
+</script>
+
+</body>
+</html>

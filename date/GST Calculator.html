@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GST Calculator</title>
+
+<style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            font-size:16px;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>GST Calculator</h2>
+
+<input type="number" id="num" placeholder="enter a number">
+
+<button onclick="gst()">Calculate GST</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function gst(){
+
+    let price = Number(document.getElementById("num").value);
+
+    let gst = price * 18 / 100;
+
+    let total = price + gst;
+
+    document.getElementById("result").innerHTML =
+    "Price = " + price +
+    "<br>GST = " + gst +
+    "<br>Total = " + total;
+
+}
+
+</script>
+
+</body>
+</html>

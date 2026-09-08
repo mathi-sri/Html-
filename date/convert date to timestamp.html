@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Date to Number</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        input,button{
+            width:90%;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+        }
+
+        button{
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        #result{
+            margin-top:20px;
+            color:green;
+            font-size:18px;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Convert Date to Number</h2>
+
+<input type="date" id="date">
+
+<button onclick="convertDate()">Convert</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function convertDate(){
+
+    let date = document.getElementById("date").value;
+
+    let number = new Date(date).getTime();
+
+    document.getElementById("result").innerHTML =
+    "Date Number = " + number;
+
+}
+
+</script>
+
+</body>
+</html>

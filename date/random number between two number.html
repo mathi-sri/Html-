@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>random number between two number</title>
+        <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:350px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            color:#333;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            font-size:16px;
+            border:2px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>get random number</h2>
+        <input type="number" id="num1" placeholder="enter a number">
+        <input type="number" id="num2" placeholder="enter a number">
+        <button onclick="randomnumber()">random number</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function randomnumber(){
+            let min = Number(document.getElementById("num1").value);
+            let max = Number(document.getElementById("num2").value);
+            let random = Math.floor(Math.random()*(max-min+1))+min;
+            document.getElementById("result").innerHTML=random;
+        }
+    </script>
+</body>
+</html>
